@@ -1,0 +1,52 @@
+.page-header {
+    position: relative;
+    background-color: $white;
+
+    &__container {
+        @include container;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 rem(16);
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            height: rem(1);
+            width: 100%;
+            max-width: $container--absolute;
+            background-color: $gray;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__logo {
+        display: flex;
+        padding: rem(16);
+
+        img {
+            width: rem(92);
+            height: rem(23);
+        }
+    }
+
+    &__account {
+        padding: rem(16);
+
+        svg {
+            width: rem(28.5);
+            height: rem(28.5);
+
+            path {
+                transition: fill $transition;
+            }
+        }
+
+        &:hover svg path {
+            fill: $primary;
+        }
+    }
+}

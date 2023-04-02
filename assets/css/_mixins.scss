@@ -1,0 +1,8 @@
+@function rem($sizeValue: 16) {
+	@return ($sizeValue / 16) + rem;
+}
+
+@mixin container {
+    max-width: $container;
+    margin: 0 auto;
+}
