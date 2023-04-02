@@ -1,2 +1,2 @@
-#Krove Theme
-##A WordPress theme created for Krove company
+# Krove Theme
+## A WordPress theme created for Krove company
