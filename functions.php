@@ -8,7 +8,7 @@ function theme_assets() {
 add_action('wp_enqueue_scripts', 'theme_assets');
 
 function theme_nav_menu() {
-    register_nav_menu('mainNavMenu', 'Main Navigation Menu');
+    register_nav_menu('krove_menu', 'Main Navigation Menu');
 }
 
 add_action('after_setup_theme', 'theme_nav_menu');

@@ -7,6 +7,7 @@
 
 <body>
     <header class="page-header">
+
         <div class="page-header__container">
             <a href="<?php echo get_home_url(); ?>" class="page-header__logo">
                 <img src="<?php echo get_template_directory_uri() . '/assets/images/logo@2x.svg'; ?>" alt="Krove">
@@ -14,7 +15,7 @@
             <nav class="main-nav page-header__navigation">
                 <?php
                 wp_nav_menu(array(
-                    'theme_location' => 'mainNavMenu'
+                    'theme_location' => 'krove_menu'
                 ));
                 ?>
             </nav>
