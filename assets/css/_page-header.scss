@@ -9,6 +9,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 rem(16);
+        height: rem(87);
 
         &::after {
             content: '';
@@ -26,15 +27,25 @@
     &__logo {
         display: flex;
         padding: rem(16);
+        z-index: 1;
 
         img {
-            width: rem(92);
-            height: rem(23);
+            width: rem(102);
         }
     }
 
+    &__navigation {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 0;
+    }
+
     &__account {
+        display: flex;
         padding: rem(16);
+        z-index: 1;
+        transform: translateX(rem(4));
 
         svg {
             width: rem(28.5);
