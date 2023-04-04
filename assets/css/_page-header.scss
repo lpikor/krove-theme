@@ -1,8 +1,16 @@
 .page-header {
     position: fixed;
-    top: 0;
+    top: -1px;
     width: 100%;
     background-color: $white;
+    opacity: 0;
+    transform: translateY(-105%);
+    transition: transform $transition, opacity $transition;
+
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
     &__container {
         @include container;
@@ -11,6 +19,8 @@
         align-items: center;
         justify-content: space-between;
         height: rem(87);
+        margin-top: $notification-bar-height;
+        z-index: 1;
 
         &::after {
             content: '';

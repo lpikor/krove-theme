@@ -1,5 +1,9 @@
 .notification-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: $primary;
+    z-index: 1;
 
     &__container {
         @include container;
