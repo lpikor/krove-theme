@@ -1,0 +1,20 @@
+.hero {
+    padding-bottom: rem(1000);
+
+    &__container {
+        text-align: center;
+        min-height: 100vh;
+        width: 100%;
+        max-width: rem(614);
+        margin: rem(312) auto 0;
+    }
+
+    &__title {
+        font-size: rem(64);
+    }
+
+    &__subtitle {
+        margin-top: 4.21%;
+        line-height: 1.5;
+    }
+}
