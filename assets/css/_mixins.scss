@@ -5,4 +5,5 @@
 @mixin container {
     max-width: $container;
     margin: 0 auto;
+    padding: 0 rem(16);
 }
