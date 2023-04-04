@@ -1,18 +1,22 @@
-const scroll = () => {
-    const pageHeader = document.querySelector('.page-header');
-    let previousScrollPosition = 0;
+export default class Scroll {
+    pageHeader = document.querySelector('.page-header');
+    previousScrollPosition = 0;
 
-    document.addEventListener('scroll', () => {
-        let newScrollPosition = window.scrollY;
+    init = () => {
+        this.handleScroll();
+    }
 
-        if (newScrollPosition < previousScrollPosition && !pageHeader.classList.contains('is-visible')) {
-            pageHeader.classList.add('is-visible');
-        } else if (newScrollPosition > previousScrollPosition && pageHeader.classList.contains('is-visible')) {
-            pageHeader.classList.remove('is-visible');
-        }
-
-        previousScrollPosition = newScrollPosition;
-    });
+    handleScroll = () => {
+        document.addEventListener('scroll', () => {
+            let newScrollPosition = window.scrollY;
+    
+            if (newScrollPosition < this.previousScrollPosition && !this.pageHeader.classList.contains('is-visible')) {
+                this.pageHeader.classList.add('is-visible');
+            } else if (newScrollPosition > this.previousScrollPosition && this.pageHeader.classList.contains('is-visible')) {
+                this.pageHeader.classList.remove('is-visible');
+            }
+    
+            this.previousScrollPosition = newScrollPosition;
+        });
+    }
 }
-
-export default scroll;
