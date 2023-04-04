@@ -5,15 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "npx node-sass --output-style compressed assets/css -o assets/css",
-    "build": "npm run scss",
-    "watch": "npx onchange \"assets/css/*.scss\" -- npm run build",
-    "dev": "npm run watch"
+    "build": "wp-scripts build --webpack-src-dir=assets/js",
+		"start": "wp-scripts start --webpack-src-dir=assets/js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^8.0.0",
-    "onchange": "^7.1.0"
+    "@wordpress/scripts": "^26.1.0"
   }
 }
