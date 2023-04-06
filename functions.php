@@ -12,3 +12,9 @@ function theme_nav_menu() {
 }
 
 add_action('after_setup_theme', 'theme_nav_menu');
+
+add_action( 'wp_head', 'add_viewport_meta_tag' , '1' );
+
+function add_viewport_meta_tag() {
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1" />';
+}
