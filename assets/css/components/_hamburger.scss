@@ -1,0 +1,51 @@
+@mixin hamburger-line() {
+    width: 100%;
+    height: rem(2);
+    background-color: $black;
+}
+
+.hamburger {
+    position: relative;
+    width: rem(32);
+    height: rem(20);
+    margin-right: rem(16);
+    background-color: transparent;
+    border: none;
+
+    &__inner {
+        @include hamburger-line;
+
+        display: block;
+
+        &::before {
+            @include hamburger-line;
+
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        &::after {
+            @include hamburger-line;
+            
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &.active &__inner {
+        transform: scale(0.8) rotate(45deg);
+
+        &::before {
+            top: 50%;
+            transform: rotate(90deg);
+        }
+
+        &::after {
+            opacity: 0;
+        }
+    }
+}

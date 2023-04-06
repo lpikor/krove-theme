@@ -6,7 +6,13 @@
         min-height: 100vh;
         width: 100%;
         max-width: rem(614);
-        margin: rem(312) auto 0;
+        margin: 40% auto 0;
+        padding: 0 rem(16);
+
+        @media (min-width: $lg) {
+            margin-top: rem(312);
+            padding: 0;
+        }
     }
 
     &__title {

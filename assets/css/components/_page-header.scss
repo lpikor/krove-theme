@@ -12,14 +12,60 @@
         transform: translateY(0);
     }
 
-    &__container {
-        @include container;
+    &.expanded {
+        height: 100vh;
+    }
 
+    &__desktop {
+        display: none;
+
+        @media (min-width: $lg) {
+            display: block;
+        }
+    }
+
+    &__mobile {
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__container {
         display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: space-between;
-        height: rem(87);
         z-index: 1;
+
+        @media (min-width: $lg) {
+            @include container;
+
+            flex-direction: row;
+            align-items: center;
+            height: rem(87);
+        }
+
+        @media (min-width: $lg) {
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                height: rem(1);
+                width: 100%;
+                max-width: $container--absolute;
+                background-color: $gray;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &__top {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: rem(87);
 
         &::after {
             content: '';
@@ -34,6 +80,14 @@
         }
     }
 
+    &__bottom {
+        display: none;
+    }
+
+    &.expanded &__bottom {
+        display: block;
+    }
+
     &__logo {
         display: flex;
         padding: rem(16);
@@ -45,10 +99,12 @@
     }
 
     &__navigation {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        z-index: 0;
+        @media (min-width: $lg) {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            z-index: 0;
+        }
     }
 
     &__account {

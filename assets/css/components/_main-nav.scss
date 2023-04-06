@@ -1,10 +1,13 @@
 .main-nav {
     .menu-main-navigation-menu-container {
         > .menu {
-            display: flex;
-            justify-content: center;
             color: $black;
             font-weight: 500;
+
+            @media (min-width: $lg) {
+                display: flex;
+                justify-content: center;
+            }
 
             .menu-item {
                 list-style-type: none;
